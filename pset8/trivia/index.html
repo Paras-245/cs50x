@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                let correct = document.querySelector('.Correct');
+                correct.addEventListener('click',function(){
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#ques1').innerHTML = 'Correct!';
+                });
+
+                let incorrect = document.querySelectorAll('.Incorrect');
+                for (let i = 0; i < incorrect.length;i++)
+                {
+                    incorrect[i].addEventListener('click',function(){
+                        incorrect[i].style.backgroundColor = 'red';
+                        document.querySelector('#ques1').innerHTML = 'Incorrect';
+                    })
+                }
+
+
+                let answer = "Mahatma Gandhi";
+                let u_answer = document.querySelector('#name');
+                let submit = document.querySelector('#check');
+                submit.addEventListener('click',function(){
+                    if(answer===u_answer.value)
+                    {
+                        u_answer.style.backgroundColor='green';
+                        document.querySelector('#ques2').innerHTML = 'Correct';
+                    }
+
+                    else
+                    {
+                        u_answer.style.backgroundColor = 'red';
+                        document.querySelector('#ques2').innerHTML = 'Incorrect';
+                    }
+                })
+
+
+            });
+
+
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the approximate ratio of prople to sheeps in NEW ZEALAND?</h3>
+                <button class = "Incorrect">6 People per 1 sheep</button>
+                <button class = "Incorrect">3 People per 1 sheep</button>
+                <button class = "Incorrect">1 People per 1 sheep</button>
+                <button class = "Incorrect">1 People per 3 sheep</button>
+                <button class = "Correct">1 People per 6 sheep</button>
+                <p id = "ques1"></p>
+
+
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+
+                <h3>Who is known as "Father of the Nation" of India?</h3>
+                <input autocomplete="off" autofocus id="name"  type="text">
+                <button id = "check">Check Answer</button>
+                <p id = "ques2"></p>
+
+
+            </div>
+        </div>
+    </body>
+</html>
