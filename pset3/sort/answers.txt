@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?:  It worked good in sorted than selection sort.
+
+sort2 uses: merge sort
+
+How do you know?: It performed best in all tests.
+
+sort3 uses: selection sort
+
+How do you know?: It worked bad in sorted than bubble sort.
